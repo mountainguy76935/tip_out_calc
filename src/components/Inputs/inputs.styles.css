@@ -40,7 +40,7 @@ form {
 .amounts {
     font-family: 'Cinzel', serif;
     position: sticky;
-    padding-top: 50px;
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
 }
