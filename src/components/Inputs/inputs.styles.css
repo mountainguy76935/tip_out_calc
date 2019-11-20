@@ -1,6 +1,8 @@
 body {
     background-image: radial-gradient(#b62309f5, #5e195e);
     color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .input {
@@ -15,7 +17,7 @@ body {
 .title{
     position: relative;
     padding-top: 40px;
-    font-size: 70px;
+    font-size: 200%;
     text-align: center; 
     color: white;
     height: 20px; 
@@ -38,5 +40,7 @@ form {
 .amounts {
     font-family: 'Cinzel', serif;
     position: sticky;
-    padding-top: 450px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
 }
