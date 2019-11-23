@@ -9,12 +9,13 @@ class Results extends React.Component{
     }
 
     render() {
-        const duBa = this.props.bartender ? this.convertToCents((this.props.net_sales - this.props.food_sales - this.props.retail_sales) * .06): 0;
+        const duBa = this.props.bartender ? this.convertToCents((this.props.net_sales - this.props.food_sales - this.props.retail_sales - this.props.at_sales) * .06): 0;
         const duBaAt = this.props.bartender ? this.convertToCents(this.props.at_sales * .03) : 0;
         const expoTip = this.props.expo ? this.convertToCents(this.props.food_sales * .02) : 0;
         const hostTip = this.props.host ? this.convertToCents(this.props.food_sales*(.005) + this.props.at_sales*(.005)) : 0;
         const busserTip = this.props.busser ? this.convertToCents(this.props.net_sales * .02) : 0;
-        const tipTotal = this.convertToCents((duBa + expoTip + hostTip + busserTip) + parseInt(this.props.amount_owed));
+        const tipTotal = this.convertToCents((duBa + expoTip + hostTip + busserTip + duBaAt) + parseInt(this.props.amount_owed));
+        console.log(tipTotal);
         return(
             <div className = "the_results">
                 <br />

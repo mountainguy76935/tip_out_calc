@@ -31,6 +31,7 @@ class Inputs extends React.Component{
       render() {
         const {...otherProps} = this.state;
       return (
+        <div>
         <body>
           <h5 className = "title">Boulder Dushanbe Old Folks Home Tip Out Calculator 
           <br></br>
@@ -142,6 +143,7 @@ class Inputs extends React.Component{
           <Results {...otherProps} />
           <h1 className="title">Now get outta here and forget about this place! Til next time....</h1>
         </body>
+        </div>
       );
       }
 };
