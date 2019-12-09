@@ -9,7 +9,8 @@ class Results extends React.Component{
     }
 
     render() {
-        const duBa = this.props.bartender ? this.convertToCents((this.props.net_sales - this.props.food_sales - this.props.retail_sales - this.props.at_sales) * .06): 0;
+        const duBaStart = this.props.net_sales - this.props.food_sales - this.props.retail_sales - this.props.at_sales;
+        const duBa = this.props.bartender ? this.convertToCents((duBaStart) * .06): 0;
         const duBaAt = this.props.bartender ? this.convertToCents(this.props.at_sales * .03) : 0;
         const expoTip = this.props.expo ? this.convertToCents(this.props.food_sales * .02) : 0;
         const hostTip = this.props.host ? this.convertToCents(this.props.food_sales*(.005) + this.props.at_sales*(.005)) : 0;
@@ -66,6 +67,10 @@ class Results extends React.Component{
                 <br />
                 <br />
                 <br />
+                <p>Total Net Sales = {this.props.net_sales ? this.props.net_sales : "you didn't sell anything today??? Super wierd"}</p>
+                <p>duba = {this.props.bartender ? duBaStart : "no bartender!"}</p>
+                <p>Food sales = {this.props.food_sales > 0 ? this.props.food_sales : "you didn't sell any food today??? Wierd"}</p>
+                <p>AT Food Sales = {this.props.at_sales > 0 ? this.props.at_sales : "No AT today? Glad you didn't have to deal with that madness...."}</p>
                 <p>expo tip out= {this.props.expo ? expoTip : 'no expo!'}</p>
                 <p>bartender tip out= {this.props.bartender ? duBa : "no bartender!"}</p>
                 <p>bartender tip out (Afternoon Tea)= {this.props.bartender ? duBaAt : "no bartender!"}</p>
